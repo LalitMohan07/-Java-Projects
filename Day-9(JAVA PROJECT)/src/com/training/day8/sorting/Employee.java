@@ -1,4 +1,4 @@
-package com.training.day8.sorting;
+package com.training.day9.sorting;
 
 public class Employee implements Comparable<Employee> {
 	private int employeeid;
