@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+"-//Hibernate/Hibernate Mapping DTD//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+<class name="onlinestore.entity.User" table="UserInfo">
+<id name="username" column="UserName"/>
+<property name="emailid" column="Email"/>
+<property name="password" column="Password"></property>
+<property name="usertype" column="UserType"/>
+<property name="supercoins" column="Supercoins"/>
+<set name="setprod" cascade="all" inverse="true" fetch="select">
+<key>
+<column name="UserName"/>
+
+</key>
+<one-to-many class="onlinestore.entity.Product"></one-to-many>
+</set>
+</class>
+</hibernate-mapping>

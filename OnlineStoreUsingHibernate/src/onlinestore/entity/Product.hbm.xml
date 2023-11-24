@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+"-//Hibernate/Hibernate Mapping DTD//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+
+<class name="onlinestore.entity.Item" table="ItemInfo">
+<id name="itemid">
+</id>
+<property name="itemname" column="Itemname" />
+<property name="category" column="Category" />
+<property name="buyingprice" column="Buyingprice"/>
+
+<joined-subclass name="onlinestore.entity.Product" table="ProductInfo">
+<key column="itemid" />
+<property name="productid" column="Productid"/>
+<property name="productname" column="Productname"/>
+<property name="sellingprice" column="Sellingprice"/>
+<property name="availableQuantity" column="AvailableQuantity"/>
+
+<many-to-one name="userobj"  class="onlinestore.entity.User" fetch="select">
+<column name="UserName" />
+</many-to-one>
+</joined-subclass>
+
+</class>
+
+</hibernate-mapping>
