@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+"-//Hibernate/Hibernate Mapping DTD//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+<class name="onetomany.Employee" table="EmpInfo">
+<id name="empid" column="Employeeid"/>
+<property name="empname" column="Employeename"></property>
+<property name="salary" column="Employeesalary"></property>
+<many-to-one name="deptobj" class="onetomany.Department" fetch="select">
+<column name="Departmentcode" not-null="true"/>
+</many-to-one>
+
+</class>
+</hibernate-mapping>

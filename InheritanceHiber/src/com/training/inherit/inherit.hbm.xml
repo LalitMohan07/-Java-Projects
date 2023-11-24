@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+"-//Hibernate/Hibernate Mapping DTD//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+
+<hibernate-mapping>
+<class name="com.training.inherit.Employee" table="SingleTableEmployee" discriminator-value="emp">
+<id name="empid" type="int">
+<generator class="increment"/>
+</id>
+<discriminator column="emptype" type="string"/>
+<property name="empname" type="string"/>
+
+<subclass name="com.training.inherit.permanentEmployee" discriminator-value="PEmployee">
+<property name="salary" type="double"/>
+<property name="bonus" type="double"/>
+</subclass>
+
+<subclass name="com.training.inherit.TempEmployee" discriminator-value="TEmployee">
+<property name="contAmount" type="double"/>
+<property name="duration" type="int"/>
+</subclass>
+</class>
+</hibernate-mapping>

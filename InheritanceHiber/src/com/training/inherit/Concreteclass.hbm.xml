@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+"-//Hibernate/Hibernate Mapping DTD//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+<class name="com.training.inherit.Employee" table="Employee" >
+<id name="empid" type="int">
+<generator class="increment"/>
+</id>
+<property name="empname" type="string"/>
+</class>
+
+<class name="com.training.inherit.permanentEmployee" table="permanentEmployee" >
+<id name="empid" type="int">
+<generator class="increment"/>
+</id>
+<property name="salary" column="Salary" type="double"/>
+<property name="bonus" column="BOnus" type="double"/>
+
+</class>
+
+<class name="com.training.inherit.TempEmployee" table="TemporaryEmployee" >
+<id name="empid" type="int">
+<generator class="increment"/>
+</id>
+<property name="contAmount" column="ContractAmount" type="double"/>
+<property name="duration" column="Duration" type="int"/>
+
+</class>
+</hibernate-mapping>
