@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+"-//Hibernate/Hibernate Mapping DTD//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+
+<hibernate-mapping>
+<class name="myshopee.Item" table="Item">
+<id name="itemcode" column="ItemCode"/>
+<property name="itemname" column="ItemName"/>
+<property name="itemprice" column="ItemPrice"/>
+<property name="qoh" column="QuantityOnHand"/>
+<many-to-one name="custobj" class="myshopee.Customer" fetch="select">
+<column name="CustomerCode" not-null="true"/>
+</many-to-one>
+</class>
+</hibernate-mapping>
