@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+"-//Hibernate/Hibernate Mapping DTD//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+<class name="poduct.onetoone.ProductDetail" table="ProductDetailInfo">
+<id name="productid" column="Productid">
+<generator class="foreign">
+<param name="property">productobj</param>
+</generator>
+</id>
+<property name="manufacturername" column="Manufacturername"/>
+<property name="dateofexpire" column="DateOfExpire"/>
+<property name="dateofmanufacture" column="DateOfManufacture"/>
+<one-to-one name="productobj"/>
+
+</class>
+</hibernate-mapping>

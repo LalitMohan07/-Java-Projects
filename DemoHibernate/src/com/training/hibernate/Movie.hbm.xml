@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+"-//Hibernate/Hibernate Mapping DTD//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+
+<hibernate-mapping>
+<class name="com.training.hibernate.Movie" table="MovieHiber">
+<id name="moviecode" column="MovieCode" type="int">
+<generator class="assigned"></generator>
+</id>
+<property name="movietitle" column="MovieName" type="string"></property>
+<property name="price" column="MoviePrice" type="double"></property>
+<property name="duration" column="MovieDuration" type="int"></property>
+
+
+</class>
+</hibernate-mapping>
